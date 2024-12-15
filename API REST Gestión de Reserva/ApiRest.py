@@ -44,7 +44,7 @@ def create_reservation():
 def get_reservation(reservation_id):
     reservation = find_reservation(reservation_id)
     if reservation is None:
-        return jsonify({"error": "Reservation not found"}), 404
+        return jsonify({"error": "Reservación no encontrada"}), 404
 
     return jsonify(reservation), 200
 
@@ -53,10 +53,10 @@ def get_reservation(reservation_id):
 def cancel_reservation(reservation_id):
     reservation = find_reservation(reservation_id)
     if reservation is None:
-        return jsonify({"error": "Reservation not found"}), 404
+        return jsonify({"error": "Reservación no encontrada"}), 404
 
     reservations.remove(reservation)
-    return jsonify({"message": "Reservation canceled"}), 200
+    return jsonify({"message": "Reservación cancelada"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
